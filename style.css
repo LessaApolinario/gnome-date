@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(25, 42, 255, 0.4);
+}
+
+div.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.short-date {
+  background-color: rgba(206, 212, 218, 0.6);
+  padding: 0.2rem 0.2rem;
+  height: 1.8rem;
+}
+
+.long-date {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  width: 40rem;
+  height: 20rem;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px;
+
+  position: relative;
+}
+
+.long-date > strong {
+  position: absolute;
+  top: 20px;
+  right: 65px;
+}
+
+.long-date > strong + div {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+.hidden {
+  display: none;
+}
