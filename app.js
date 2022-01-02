@@ -58,7 +58,14 @@ const extendDateLikeGNOME = `${extendedMonthOfTheYear} ${day} ${year}`
 
 // Manipulando a DOM e inserindo as datas
 const shortDate = document.querySelector('.short-date')
-shortDate.textContent = dateLikeGNOME
+
+const displayTime = () => {
+  let date = new Date()
+  let time = date.toLocaleTimeString('en-GB').substring(0, 5)
+  shortDate.textContent = dateLikeGNOME.substring(0, 10) + ' ' + time
+}
+
+const createClock = setInterval(displayTime, 1000)
 
 const dayOfTheWeek = document.querySelector('.day-of-the-week')
 dayOfTheWeek.textContent = extendedDayOfTheWeek
