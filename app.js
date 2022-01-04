@@ -73,22 +73,17 @@ dayOfTheWeek.textContent = extendedDayOfTheWeek
 const fullDate = document.querySelector('.full-date')
 fullDate.textContent = extendDateLikeGNOME
 
-// Abrindo a caixa com a data longa
+// Abrindo e fechando a caixa com a data longa
 const longDate = document.querySelector('.long-date')
 
 shortDate.addEventListener('click', () => {
-  shortDate.classList.add('open')
-  shortDate.classList.remove('short-date')
-  longDate.classList.remove('hidden')
-})
-
-// Fechando a caixa com a data longa
-const button = document.querySelector('button')
-
-button.addEventListener('click', () => {
   const hasShortDateClass = shortDate.classList.contains('short-date')
 
-  if (!hasShortDateClass) {
+  if (hasShortDateClass) {
+    shortDate.classList.add('open')
+    shortDate.classList.remove('short-date')
+    longDate.classList.remove('hidden')
+  } else {
     shortDate.classList.remove('open')
     shortDate.classList.add('short-date')
     longDate.classList.add('hidden')
